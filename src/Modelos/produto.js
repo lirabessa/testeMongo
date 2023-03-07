@@ -9,7 +9,7 @@ const Produto = new Schema(
   nomeProd: String,
   descricao: String,
   preco: Number,
-  nomeVendedor: String
+  nomeVendedor: Object
 });
 
 const Produtos = mongoose.model ('produtos', Produto)

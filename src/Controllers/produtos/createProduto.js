@@ -1,4 +1,4 @@
-const Produtos = require ('../../Componetes/produto')
+const Produtos = require ('../../Modelos/produto')
 
 class ProdutoControle {
     async create (req, res){
