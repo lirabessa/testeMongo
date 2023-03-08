@@ -1,6 +1,6 @@
 const {Router} = require ('express');
 const ProdutoControle = require ('./Controllers/produtos/createProduto')
-const VendedorControle = require ('./Controllers/vendedor/createVendedor')
+const VendedorControle = require ('./Controllers/vendedor/createVendedor');
 
 const routes = Router();
 
@@ -9,6 +9,12 @@ routes.get('/', (req,res) => {
 });
 
 routes.post('/produtos' , ProdutoControle.create )
+routes.get('/produtos' , ProdutoControle.find)
+
+
 routes.post('/vendedor' , VendedorControle.create )
+
+
+
 
 module.exports = routes;
