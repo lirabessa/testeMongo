@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
-      - uses: github/super-linter@master
+      - uses: github/super-linter@v4.1.0
         with:
           lint-tools: "eslint"
           eslint-args: "--ext .js --no-ignore --no-inline-config"
