@@ -1,0 +1,18 @@
+on: [git clone, git pull]
+name: Instalar dependencias
+jobs:
+  install: 
+    name: Instalar Pacotes
+    runs-on: ubuntu-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{runner.os}}-${{hashFiles('**/yarn.lock')}}
+
+      - name: Install dependencias
+        run: npm install
