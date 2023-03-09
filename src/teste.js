@@ -1,5 +1,5 @@
-function teste(){
+function teste2(){
     return "Olar"
 }
 
-export default teste;
+export default teste2;
