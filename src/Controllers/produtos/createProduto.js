@@ -21,5 +21,7 @@ class ProdutoControle {
         }
         
     }
+
+    
 }
 module.exports = new ProdutoControle();
