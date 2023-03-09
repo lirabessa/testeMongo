@@ -1,15 +1,20 @@
-name: ESLint
+name: ESLint Check
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
 
 jobs:
   eslint:
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npx eslint . --max-warnings 0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - uses: "github/super-linter@v5.1.0"
+        with:
+          lint-tools: "eslint"
+          eslint-args: "--ext .js --no-ignore --no-inline-config"
