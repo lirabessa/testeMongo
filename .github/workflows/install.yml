@@ -20,17 +20,17 @@ jobs:
 
 codigoMorto:
   name: Procurando codigo não utilizado
-   runs-on: ubuntu-latest
-   needs: install
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  runs-on: ubuntu-latest
+  needs: install
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
 
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: Restore node_modules
-          key: ${{runner.os}}-${{hashFiles('**/yarn.lock')}}
+    - name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: Restore node_modules
+        key: ${{runner.os}}-${{hashFiles('**/yarn.lock')}}
 
-      - name: Rodando
-        run: npm ts-prune --error
+    - name: Rodando
+      run: npm ts-prune --error
