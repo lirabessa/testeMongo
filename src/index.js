@@ -3,4 +3,4 @@ const Loaders = require ('./loads/index')
 
 Loaders.start();
 
-app.listen(3333, () => console.log('Servidor funcionado'));
+app.listen(3000, () => console.log('Servidor funcionado'));

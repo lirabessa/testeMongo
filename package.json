@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodem src/index.js",
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --noStackTrace --watchAll --detectOpenHandles "
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,8 @@
     "nodemon": "^2.0.20"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3",
     "ts-prune": "^0.10.3"
   }
 }
