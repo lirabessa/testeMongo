@@ -10,7 +10,6 @@ describe('A função ehPar', () => {
     expect(ehPar(4)).toBe(true);
     expect(ehPar(10)).toBe(true);
   });
-
   it('deve retornar false para números ímpares', () => {
     expect(ehPar(1)).toBe(false);
     expect(ehPar(3)).toBe(false);
