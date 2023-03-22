@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     name: Run Jest test suite
-    runs-on: ubuntu-latest
+    runs-on: WinNote
     timeout-minutes: 10
 
     steps:
@@ -20,6 +20,6 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm ci
-      - run: npm test
+      - run: npm run test
 
     
