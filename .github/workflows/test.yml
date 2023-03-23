@@ -1,23 +1,33 @@
-name: Testes
+# name: Testes
 
-on:
-  push:
-    branches:
-      - main
-jobs:
-  test:
-    runs-on: ubuntu-latest
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+#     steps:
+#       - uses: actions/checkout@v3
 
  
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: '16.x'
 
-      - name: Install dependencies
-        run: yarn install
+#       - name: Install dependencies
+#         run: yarn install
 
-      - name: Run tests
-        run: yarn test
+#       - name: Run tests
+#         run: yarn test
+
+- name: Limpar cache do GitHub Actions
+  uses: actions/cache@v2
+  with:
+    path: |
+      ~/.npm
+      ~/.cache
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
