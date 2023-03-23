@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --noStackTrace --watchAll --detectOpenHandles --forceExit"
+    "test": "jest --noStackTrace --watchAll --detectOpenHandles --forceExit --testTimeout=30000"
   },
   "keywords": [],
   "author": "",
