@@ -1,20 +1,23 @@
-name: ESLint Check
+name: Testes
 
-on: 
+on:
   push:
-    branches: [dev]
-
+    branches:
+      - main
 jobs:
-  eslint:
-    name: ESLint
-    runs-on: WinNote
+  test:
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '16'
-      - run: npm install
-      - uses: github/super-linter@v4.1.0
-        with:
-          lint-tools: "eslint"
-          eslint-args: "--ext .js --no-ignore --no-inline-config"
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test

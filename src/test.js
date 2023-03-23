@@ -4,7 +4,7 @@ function ehPar(numero) {
   return numero % 2 === 0;
 }
 
-describe('A função ehPar', () => {
+describe('A função é Par', () => {
   it('deve retornar true para números pares', () => {
     expect(ehPar(2)).toBe(true);
     expect(ehPar(4)).toBe(true);
