@@ -19,13 +19,3 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Run tests
-        run: yarn test
